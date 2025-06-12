@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
 import classnames from "classnames";
-import Checkbox from "@material-ui/core/Checkbox";
 import ItemLabel from "./item_label";
+import Checkbox from "@mui/material/Checkbox";
 
 import styles from "./item.scss";
 
@@ -30,7 +30,7 @@ const Item = ({
       <Checkbox
         id={item.id ? `checkbox-${item.id}` : null}
         type="checkbox"
-        color="primary"
+        color="secondary"
         checked={checked}
         indeterminate={indeterminate}
         disabled={disabled}

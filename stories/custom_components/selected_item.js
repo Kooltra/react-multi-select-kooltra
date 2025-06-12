@@ -1,5 +1,5 @@
 import React from "react";
-import DeleteIcon from "react-icons/lib/md/delete";
+import { MdDelete } from "react-icons/md";
 
 const SelectedItem = ({ item, height }) => (
   <div
@@ -13,7 +13,7 @@ const SelectedItem = ({ item, height }) => (
   >
     <div>{item.label}</div>
     <div style={{ fontSize: "24px", margin: "0 12px" }}>
-      <DeleteIcon />
+      <MdDelete />
     </div>
   </div>
 );

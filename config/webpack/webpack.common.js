@@ -6,10 +6,25 @@ module.exports = {
   entry: {
     index: "./src/index.js"
   },
-  externals: {
-    react: "react",
-    "react-dom": "react-dom"
-  },
+  externals: [
+    {
+      react: {
+        commonjs: "react",
+        commonjs2: "react",
+        amd: "react",
+        root: "React"
+      },
+      "react-dom": {
+        commonjs: "react-dom",
+        commonjs2: "react-dom",
+        amd: "react-dom",
+        root: "ReactDOM"
+      }
+    },
+    /@mui\/material/,
+    /@emotion\/react/,
+    /@emotion\/styled/
+  ],
   plugins: [
     new MiniCssExtractPlugin({
       filename: "style.css"

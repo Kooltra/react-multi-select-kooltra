@@ -1,8 +1,8 @@
 import React from "react";
 import PropTypes from "prop-types";
-import CloseIcon from "react-icons/lib/md/close";
-import IconButton from "@material-ui/core/IconButton";
 import ItemLabel from "./item_label";
+import IconButton from '@mui/material/IconButton';
+import { MdClose } from "react-icons/md";
 import classnames from "classnames";
 import styles from "./selected_item.scss";
 
@@ -18,7 +18,7 @@ const SelectedItem = ({ item, height, group, disabled }) => (
     <ItemLabel label={item.label} />
     {!group && !disabled && (
       <IconButton>
-        <CloseIcon />
+        <MdClose />
       </IconButton>
     )}
   </div>

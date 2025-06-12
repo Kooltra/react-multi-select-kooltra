@@ -1,6 +1,5 @@
 import React from "react";
-import TickOutline from "react-icons/lib/ti/tick-outline";
-import Tick from "react-icons/lib/ti/tick";
+import { TiTickOutline, TiTick } from "react-icons/ti";
 
 import style from "./item_style.scss";
 
@@ -15,9 +14,9 @@ const Item = ({ item, checked, height }) => {
     >
       <div className={`${style.icon} ${checked ? style.icon_checked : ""}`}>
         {!checked ? (
-          <TickOutline color={!checked ? "#41B6E6" : ""} />
+          <TiTickOutline color={!checked ? "#41B6E6" : ""} />
         ) : (
-          <Tick color={checked ? "#fff" : ""} />
+          <TiTick color={checked ? "#fff" : ""} />
         )}
       </div>
       <div className={style.label}>{item.label}</div>

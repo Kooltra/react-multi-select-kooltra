@@ -1,9 +1,6 @@
 import React, { PureComponent } from "react";
 import classnames from "classnames";
 import PropTypes from "prop-types";
-import JssProvider from "react-jss/lib/JssProvider";
-import { create } from "jss";
-import { createGenerateClassName, jssPreset } from "@material-ui/core/styles";
 
 import withMultiSelectState from "./multi_select_state";
 import withResponsiveHeight from "./with_responsive_height";
@@ -12,9 +9,6 @@ import DestinationList from "./destination_list";
 
 import styles from "./multi_select.scss";
 import Loader from "./loader/loader";
-
-const jss = create(jssPreset());
-const defaultGenerateClassName = createGenerateClassName();
 
 export class MultiSelect extends PureComponent {
   static propTypes = {
@@ -38,7 +32,6 @@ export class MultiSelect extends PureComponent {
     maxSelectedItems: PropTypes.number,
     withGrouping: PropTypes.bool,
     listRenderer: PropTypes.func,
-    generateClassName: PropTypes.func,
     showSelectedItemsSearch: PropTypes.bool,
     isLocked: PropTypes.func
   };
@@ -54,7 +47,6 @@ export class MultiSelect extends PureComponent {
     itemHeight: 40,
     loaderRenderer: Loader,
     withGrouping: false,
-    generateClassName: defaultGenerateClassName,
     showSelectedItemsSearch: false
   };
 
@@ -106,7 +98,6 @@ export class MultiSelect extends PureComponent {
       maxSelectedItems,
       searchValue,
       withGrouping,
-      generateClassName,
       listRenderer,
       showSelectedItemsSearch,
       searchSelectedItemsValue,
@@ -119,12 +110,12 @@ export class MultiSelect extends PureComponent {
     const disabled =
       maxSelectedItems && maxSelectedItems <= selectedItems.length;
     const LoaderRenderer = loaderRenderer;
+    
     return (
-      <JssProvider jss={jss} generateClassName={generateClassName}>
-        <div
-          className={classnames(styles.wrapper, wrapperClassName)}
-          style={{ height }}
-        >
+      <div
+        className={classnames(styles.wrapper, wrapperClassName)}
+        style={{ height }}
+      >
           {loading && <LoaderRenderer />}
           {!loading && (
             <SourceList
@@ -174,7 +165,6 @@ export class MultiSelect extends PureComponent {
             />
           )}
         </div>
-      </JssProvider>
     );
   }
 }

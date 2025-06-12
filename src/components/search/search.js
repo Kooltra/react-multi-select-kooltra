@@ -1,6 +1,5 @@
 import React from "react";
-import Icon from "@material-ui/core/Icon";
-import SearchIcon from "react-icons/lib/md/search";
+import { MdSearch } from "react-icons/md";
 import PropTypes from "prop-types";
 
 import styles from "./search.scss";
@@ -54,7 +53,7 @@ Search.propTypes = {
 
 Search.defaultProps = {
   searchPlaceholder: "Search...",
-  searchIcon: SearchIcon
+  searchIcon: MdSearch
 };
 
 export default Search;

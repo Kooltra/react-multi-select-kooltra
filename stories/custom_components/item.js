@@ -1,6 +1,5 @@
 import React from "react";
-import StarOIcon from "react-icons/lib/md/star-outline";
-import StarIcon from "react-icons/lib/md/star";
+import { MdStarOutline, MdStar } from "react-icons/md";
 
 const Item = ({ item, checked }) => (
   <div
@@ -13,7 +12,7 @@ const Item = ({ item, checked }) => (
     }}
   >
     <div style={{ fontSize: "24px", margin: "0 12px 0 0" }}>
-      {!checked ? <StarOIcon /> : <StarIcon />}
+      {!checked ? <MdStarOutline /> : <MdStar />}
     </div>
     {item.label}
   </div>
