@@ -25,7 +25,7 @@
     "semantic-release": "semantic-release pre && npm publish && semantic-release post",
     "precommit": "lint-staged",
     "postcommit": "git update-index -g",
-    "prepublishOnly": "npm run build:production"
+    "prepare": "npm run build:production"
   },
   "lint-staged": {
     "*.{js,scss}": [
